@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script>
+    var env=prompt("Enter the environment such as dev,prod,stage or test ")
+    let sending_amount=prompt("Enter the required amount to be send")
+    switch(env){
+        case "dev":
+            sending_amount= +sending_amount + +sending_amount*0.1
+            break;
+        case "test":
+            sending_amount= +sending_amount + +sending_amount*0.2
+            break;
+        case "stage":
+            sending_amount= +sending_amount + +sending_amount*0.3
+            break;
+        case "prod":
+            sending_amount= +sending_amount + +sending_amount*0.05
+            break;
+        default:
+            sending_amount=100
+}
+console.log(sending_amount)
+
+
+    
+
+</script>
