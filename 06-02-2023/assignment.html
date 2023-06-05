@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About me!</title>
+  <style>
+    img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+    #bio1 {
+      color:darkolivegreen;
+      border:2px solid black;
+      border-radius:30px;
+      width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+    <img src="/Users/revanthreddychalla/Desktop/JS/REVANTH Small.jpeg" alt="photo.jpeg"
+style="height: 250px;width: 250px;border-radius: 50%;">
+  <div id="bio1">
+  <div id ="bio"></div>
+  <p>My Hobbies</p>
+  <ul id="hobbies"></ul>
+  <input type="text" id="delete-input" placeholder="Enter hobby to delete">
+  <button onclick="deleteHobby()">Delete Hobby</button>
+  <button onclick="addHobby()">Add Hobby</button>
+</div>
+  <script>
+    var profile={
+        first_Name:"Revanth Reddy",
+        last_Name:"Challa",
+        date_of_birth:"12-25-1999",
+        native_place:"Warangal",
+        current_location:"Dallas,Texas",
+        under_Graduation:"B.Tech in ECE at CMRCET,Hyderabad.",
+        masters:"Masters in CIS at New England College,NH",
+    }
+    document.getElementById("bio").innerHTML ="My name is " + profile.first_Name +
+     profile.last_Name + ".I have born on " + profile.date_of_birth + " in " + profile.native_place +
+     ".I have been recently graduated with " + profile.masters +  " and I have done my " +  
+     profile.under_Graduation;
+  
+
+    let hobbies = ["Reading", "Painting", "Cooking"];
+    function displayHobbies() {
+        document.getElementById("hobbies").innerHTML=hobbies;
+    
+    }
+
+    function addHobby() {
+      const newHobby = prompt("Enter a new hobby:");
+      if (newHobby) {
+        hobbies.push(newHobby);}
+        displayHobbies();
+      
+    }
+    
+    function deleteHobby() {
+  let deleteInput = document.getElementById("delete-input").value;
+
+  for (let i = 0; i < hobbies.length; i++) {
+    if (hobbies[i] === deleteInput) {
+      hobbies.splice(i, 1);
+      break;
+    }
+
+  }
+
+  displayHobbies();
+}
+  displayHobbies();
+  </script>
+</body>
+</html>
+
+    
+</script>
+
+
+</body>
+</html>
