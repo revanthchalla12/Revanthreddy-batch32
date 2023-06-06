@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About me!</title>
+  <style>
+    #box {
+      color:darkolivegreen;
+      border:2px solid black;
+      border-radius:30px;
+      width: 350px;
+      margin: 20px auto;
+      padding: 40px;
+    }
+  </style>
+  <body>
+    <div id="bio"></div>     
+    <script>
+        function displayProfile(){
+            var firstName=document.getElementById("firstName").value;
+            var lastName=document.getElementById("lastName").value;
+            var dob=document.getElementById("dob").value;
+            var email=document.getElementById("email").value;
+            var phoneNumber=document.getElementById("tel").value;
+            var profile="First Name: " + firstName + "\n"+
+                        "Last Name: " + lastName + "\n" +
+                        "Date of Birth: " + dob + "\n" +
+                        "Email: " + email + "\n" +
+                        "Phone Number: " + phoneNumber;
+            alert(profile);
+
+        }
+        </script>
+<div id="box">
+    <form style="display: block;text-align: center;">
+        <input type="text" id="firstName" placeholder="Enter your first name"><br><br>
+        <input type="text" id="lastName" placeholder="Enter your last name"><br><br>
+        <input type="date" id="dob" placeholder="Enter your date of birth"><br><br>
+        <input type="email" id="email" placeholder="Enter your email id"><br><br>
+        <input type="tel" id="tel" placeholder="Enter your phone number"><br><br>
+        <input type="button" value="Submit" onclick="displayProfile()">
+    </form>
+</div>
+
+
+
