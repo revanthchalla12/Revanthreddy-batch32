@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Profile Information</h1>
+  <form id="profileForm" >
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br><br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required><br><br>
+    
+    <label for="hobbies">Hobbies:</label><br>
+    <input type="checkbox" id="hobby1" name="hobbies" value="reading">
+    <label for="hobby1">Travelling</label><br>
+    
+    <input type="checkbox" id="hobby2" name="hobbies" value="painting">
+    <label for="hobby2">Cooking</label><br>
+    
+    <input type="checkbox" id="hobby3" name="hobbies" value="sports">
+    <label for="hobby3">Sports</label><br><br>
+    
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+    
+    <input type="submit" value="Submit" onclick="submitForm()">
+  </form>
+  
+  <h2>Submitted Information:</h2>
+  <div id="submittedInfo"></div>
+  
+  <script>
+    function submitForm() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const gender = document.getElementById('gender').value;
+      const email = document.getElementById('email').value;
+      const phoneNumber = document.getElementById('phoneNumber').value;
+      const hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+      const selectedHobbies = Array.from(hobbies).map(hobby => hobby.value);
+      const dob = document.getElementById('dob').value;
+      
+      const submittedData = `
+        <p>First Name: ${firstName}</p>
+        <p>Last Name: ${lastName}</p>
+        <p>Gender:${gender}</p>
+        <p>Email: ${email}</p>
+        <p>Phone Number: ${phoneNumber}</p>
+        <p>Hobbies: ${selectedHobbies.join(', ')}</p>
+        <p>Date of Birth: ${dob}</p>
+      `;
+      
+      const submittedInfo = document.getElementById('submittedInfo');
+      submittedInfo.innerHTML = submittedData;
+    }
+  </script>
+</body>
+</html>
